@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Calculator LangGraph</title>
+  <desc id="desc">The start node conditionally routes to add, multiply, or invalid, and each branch ends at the end node.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <style>
+      .edge { fill: none; stroke: #64748b; stroke-width: 3; marker-end: url(#arrow); }
+      .label { font: 600 16px Arial, sans-serif; fill: #334155; }
+      .node-text { font: 700 20px Arial, sans-serif; fill: #0f172a; text-anchor: middle; dominant-baseline: middle; }
+      .terminal-text { font: 700 18px Arial, sans-serif; fill: white; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect width="900" height="520" rx="22" fill="#f8fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">Calculator LangGraph</text>
+
+  <!-- Edges from START -->
+  <path class="edge" d="M450 118 C350 145, 230 170, 190 219"/>
+  <path class="edge" d="M450 118 L450 219"/>
+  <path class="edge" d="M450 118 C550 145, 670 170, 710 219"/>
+  <text class="label" x="278" y="162">operation = add</text>
+  <text class="label" x="465" y="174">operation = multiply</text>
+  <text class="label" x="643" y="162">unsupported</text>
+
+  <!-- Edges to END -->
+  <path class="edge" d="M190 291 C225 354, 340 378, 422 409"/>
+  <path class="edge" d="M450 291 L450 404"/>
+  <path class="edge" d="M710 291 C675 354, 560 378, 478 409"/>
+
+  <!-- START -->
+  <rect x="390" y="76" width="120" height="52" rx="26" fill="#2563eb" filter="url(#shadow)"/>
+  <text class="terminal-text" x="450" y="102">START</text>
+
+  <!-- Branch nodes -->
+  <rect x="120" y="220" width="140" height="70" rx="12" fill="#dcfce7" stroke="#22c55e" stroke-width="3" filter="url(#shadow)"/>
+  <text class="node-text" x="190" y="255">add</text>
+
+  <rect x="370" y="220" width="160" height="70" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" filter="url(#shadow)"/>
+  <text class="node-text" x="450" y="255">multiply</text>
+
+  <rect x="640" y="220" width="140" height="70" rx="12" fill="#fee2e2" stroke="#ef4444" stroke-width="3" filter="url(#shadow)"/>
+  <text class="node-text" x="710" y="255">invalid</text>
+
+  <!-- END -->
+  <rect x="395" y="404" width="110" height="52" rx="26" fill="#475569" filter="url(#shadow)"/>
+  <text class="terminal-text" x="450" y="430">END</text>
+</svg>
